@@ -1,12 +1,12 @@
 # Bekka Valley Website (Multi-page)
 
-A static multi-page website with a Sabra-inspired visual direction (bold colors, rounded UI, food-brand storytelling) and a Shopify-ready shop scaffold.
+A static multi-page website with a white-background, mustard-and-green visual theme and a Shopify-ready shop scaffold.
 
 ## Pages
-- `index.html` — home/hero + category/brand sections
+- `index.html` — home/hero and brand sections
 - `about.html` — brand story
-- `products.html` — product groups and pairings
-- `shop.html` — dynamic product cards + client cart placeholder
+- `products.html` — **Buy Locally** retailer listing page
+- `shop.html` — dynamic product cards + local cart placeholder
 - `contact.html` — support and wholesale contact blocks
 
 ## Shopify hookup plan
