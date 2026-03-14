@@ -1,57 +1,27 @@
 const year = document.getElementById("year");
 if (year) {
-  year.textContent = new Date().getFullYear();
+  year.textContent = String(new Date().getFullYear());
 }
 
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector("nav");
 if (menuToggle && nav) {
-  menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("open");
-  });
+  menuToggle.addEventListener("click", () => nav.classList.toggle("open"));
 }
 
 const products = [
-  { id: "hummus-classic", name: "Classic Hummus", price: 5.99 },
-  { id: "hummus-rp", name: "Roasted Pepper Hummus", price: 6.49 },
-  { id: "chips-seasalt", name: "Pita Chips Sea Salt", price: 4.49 },
-  { id: "dressing-lemon", name: "Lemon Herb Dressing", price: 6.99 },
-  { id: "bundle-party", name: "Party Dip Bundle", price: 18.99 },
-  { id: "bundle-weekly", name: "Weekly Snack Pack", price: 24.99 }
+  { id: "classic-hummus", name: "Classic Hummus", price: 5.99 },
+  { id: "garlic-hummus", name: "Garlic Hummus", price: 6.29 },
+  { id: "redpepper-hummus", name: "Roasted Red Pepper Hummus", price: 6.49 },
+  { id: "seasalt-pita", name: "Pita Chips Sea Salt", price: 4.49 },
+  { id: "everything-pita", name: "Pita Chips Everything", price: 4.99 },
+  { id: "lemon-dressing", name: "Lemon Herb Dressing", price: 6.99 }
 ];
 
 const cart = [];
 
-function renderShopProducts() {
-  const grid = document.getElementById("product-grid");
-  if (!grid) {
-    return;
-  }
-
-  products.forEach((product) => {
-    const card = document.createElement("article");
-    card.className = "card";
-    card.innerHTML = `
-      <h2>${product.name}</h2>
-      <p><strong>$${product.price.toFixed(2)}</strong></p>
-      <button class="btn btn-primary" data-add="${product.id}">Add to cart</button>
-    `;
-    grid.appendChild(card);
-  });
-
-  grid.addEventListener("click", (event) => {
-    const button = event.target;
-    if (!(button instanceof HTMLButtonElement)) {
-      return;
-    }
-    const id = button.dataset.add;
-    const product = products.find((p) => p.id === id);
-    if (!product) {
-      return;
-    }
-    cart.push(product);
-    updateCart();
-  });
+function formatMoney(value) {
+  return `$${value.toFixed(2)}`;
 }
 
 function updateCart() {
@@ -63,13 +33,50 @@ function updateCart() {
 
   cartList.innerHTML = "";
   let total = 0;
-  cart.forEach((item) => {
-    total += item.price;
-    const li = document.createElement("li");
-    li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-    cartList.appendChild(li);
+
+  cart.forEach((product) => {
+    total += product.price;
+    const row = document.createElement("li");
+    row.textContent = `${product.name} — ${formatMoney(product.price)}`;
+    cartList.appendChild(row);
   });
-  cartTotal.textContent = `$${total.toFixed(2)}`;
+
+  cartTotal.textContent = formatMoney(total);
+}
+
+function renderShopProducts() {
+  const grid = document.getElementById("product-grid");
+  if (!grid) {
+    return;
+  }
+
+  products.forEach((product) => {
+    const card = document.createElement("article");
+    card.className = "card";
+    card.innerHTML = `
+      <p class="eyebrow">Bekka Valley</p>
+      <h3>${product.name}</h3>
+      <p><strong>${formatMoney(product.price)}</strong></p>
+      <button class="btn btn-primary" data-product-id="${product.id}">Add to Cart</button>
+    `;
+    grid.appendChild(card);
+  });
+
+  grid.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    const selectedId = target.dataset.productId;
+    const product = products.find((item) => item.id === selectedId);
+    if (!product) {
+      return;
+    }
+
+    cart.push(product);
+    updateCart();
+  });
 }
 
 renderShopProducts();
@@ -77,6 +84,6 @@ renderShopProducts();
 const checkoutButton = document.getElementById("checkout-btn");
 if (checkoutButton) {
   checkoutButton.addEventListener("click", () => {
-    window.alert("Connect this button to your Shopify checkout URL or Storefront API flow.");
+    window.alert("Next step: connect this button to Shopify checkout creation + redirect.");
   });
 }

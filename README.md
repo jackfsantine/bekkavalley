@@ -1,24 +1,24 @@
-# Bekka Valley Multi-page Site
+# Bekka Valley Website (Multi-page)
 
-A bright, modern static multi-page website inspired by bold food-brand layouts.
+A static multi-page website with a Sabra-inspired visual direction (bold colors, rounded UI, food-brand storytelling) and a Shopify-ready shop scaffold.
 
 ## Pages
-- `index.html` (Home)
-- `about.html`
-- `products.html`
-- `shop.html` (shop scaffold with cart UI)
-- `contact.html`
+- `index.html` — home/hero + category/brand sections
+- `about.html` — brand story
+- `products.html` — product groups and pairings
+- `shop.html` — dynamic product cards + client cart placeholder
+- `contact.html` — support and wholesale contact blocks
 
-## Shopify integration notes
-The shop page currently uses local JavaScript data to render products and cart behavior.
+## Shopify hookup plan
+The current implementation intentionally keeps the cart local for quick UX iteration.
 
 To connect Shopify:
-1. Replace the `products` array in `app.js` with products fetched from Shopify Storefront API.
-2. Wire the `Checkout with Shopify` button (`#checkout-btn`) to create/retrieve a checkout URL.
-3. Optional: store cart state in `localStorage` for persistence.
+1. Replace `products` in `app.js` with Storefront API product data.
+2. Replace `checkout-btn` handler with checkout creation and redirect URL.
+3. Optionally persist cart state in `localStorage`.
 
-## Run locally
+## Local preview
 ```bash
 python3 -m http.server 4173
 ```
-Then open <http://localhost:4173>.
+Then open `http://localhost:4173`.
