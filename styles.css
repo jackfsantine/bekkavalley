@@ -149,6 +149,18 @@ section.block {
   border-top: 8px solid var(--mustard);
 }
 
+
+.product-detail-grid {
+  align-items: stretch;
+}
+.product-detail-card h3 {
+  margin-top: 0;
+  color: var(--green-dark);
+}
+.product-detail-card p {
+  line-height: 1.6;
+}
+
 .band {
   width: min(1240px, 94vw);
   margin: 2rem auto;
