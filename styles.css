@@ -75,25 +75,11 @@ main { min-height: calc(100vh - 150px); }
 }
 
 .home-hero-media {
-  min-height: 520px;
+  min-height: 460px;
   position: relative;
-}
-
-.hero-artwork {
-  width: 100%;
-  height: 100%;
-  min-height: 520px;
-  display: block;
-  object-fit: cover;
-}
-
-.home-hero-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
   background:
-    linear-gradient(180deg, rgba(17, 51, 33, 0.2) 0%, rgba(17, 51, 33, 0.12) 62%, rgba(16, 56, 36, 0.55) 100%);
-  pointer-events: none;
+    linear-gradient(120deg, rgba(36, 92, 55, 0.62), rgba(201, 155, 79, 0.38)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
 }
 
 .home-hero-overlay {
@@ -130,15 +116,47 @@ main { min-height: calc(100vh - 150px); }
   text-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
+.hero-pill {
+  position: absolute;
+  left: 50%;
+  bottom: 3.4rem;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #b88f49 0%, #c99b4f 100%);
+  color: #1f3e2a;
+  border-radius: 999px;
+  padding: 0.38rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero-dash {
+  position: absolute;
+  border-top: 5px dashed rgba(255, 255, 255, 0.88);
+}
+
+.hero-dash-top {
+  width: 220px;
+  left: 1.3rem;
+  top: 2rem;
+  transform: rotate(-14deg);
+}
+
+.hero-dash-mid {
+  width: 220px;
+  right: 1.3rem;
+  top: 7.2rem;
+  transform: rotate(9deg);
+}
+
 .home-products-band {
   width: min(1240px, 94vw);
   margin: 0 auto 2rem;
-  background: linear-gradient(180deg, rgba(47, 123, 73, 0.16) 0%, rgba(47, 123, 73, 0.3) 36%, rgba(201, 155, 79, 0.3) 72%, rgba(201, 155, 79, 0.16) 100%);
+  background: linear-gradient(160deg, rgba(47, 123, 73, 0.7) 0%, rgba(29, 95, 61, 0.62) 28%, rgba(184, 143, 73, 0.55) 58%, rgba(201, 155, 79, 0.5) 100%);
   border-radius: 0 0 30px 30px;
   padding: 2rem 1.3rem 1.9rem;
   color: #fff;
   text-align: center;
-  backdrop-filter: blur(2px);
 }
 
 .home-products-band h2 {
@@ -170,11 +188,6 @@ main { min-height: calc(100vh - 150px); }
   color: #fff;
   font-size: 2rem;
   font-family: Georgia, "Times New Roman", serif;
-}
-
-.home-product-item .btn-secondary {
-  background: rgba(255, 248, 228, 0.92);
-  border-color: rgba(215, 199, 160, 0.92);
 }
 
 .home-banner {
@@ -215,6 +228,19 @@ main { min-height: calc(100vh - 150px); }
 
 .home-banner-overlay .lead {
   max-width: 58ch;
+}
+
+.home-banner-badge {
+  position: absolute;
+  right: clamp(1rem, 4vw, 2.4rem);
+  top: clamp(1rem, 4vw, 2.2rem);
+  background: linear-gradient(180deg, #b88f49 0%, #c99b4f 100%);
+  color: #fff;
+  font-weight: 900;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  transform: rotate(8deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.22);
 }
 
 
@@ -511,6 +537,11 @@ section.block {
     max-width: none;
   }
 
+  .home-banner-badge {
+    top: 0.9rem;
+    right: 0.9rem;
+  }
+
   .hero,
   .grid.three,
   .grid.two,
@@ -522,9 +553,13 @@ section.block {
     grid-template-columns: 1fr;
   }
 
-  .home-hero-media,
-  .hero-artwork {
-    min-height: 420px;
+  .home-hero-media {
+    min-height: 520px;
+  }
+
+
+  .hero-pill {
+    bottom: 2.2rem;
   }
 
   .gallery-item img {
