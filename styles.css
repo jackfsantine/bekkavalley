@@ -64,6 +64,136 @@ nav a.active {
 main { min-height: calc(100vh - 150px); }
 
 
+
+.home-hero-replica {
+  width: min(1240px, 94vw);
+  margin: 2.2rem auto 0;
+  border-radius: 30px 30px 0 0;
+  overflow: hidden;
+  position: relative;
+  background: #1f5c3f;
+}
+
+.home-hero-media {
+  min-height: 460px;
+  position: relative;
+  background:
+    linear-gradient(120deg, rgba(36, 92, 55, 0.62), rgba(201, 155, 79, 0.38)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+}
+
+.home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  padding: clamp(1.2rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  color: #fff;
+}
+
+.home-hero-overlay h1 {
+  margin-top: 2.2rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero-product-discs {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 0.8rem;
+}
+
+.hero-product-discs img {
+  width: clamp(130px, 16vw, 210px);
+  height: clamp(130px, 16vw, 210px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.hero-pill {
+  position: absolute;
+  left: 50%;
+  bottom: 3.4rem;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #b88f49 0%, #c99b4f 100%);
+  color: #1f3e2a;
+  border-radius: 999px;
+  padding: 0.38rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero-dash {
+  position: absolute;
+  border-top: 5px dashed rgba(255, 255, 255, 0.88);
+}
+
+.hero-dash-top {
+  width: 220px;
+  left: 1.3rem;
+  top: 2rem;
+  transform: rotate(-14deg);
+}
+
+.hero-dash-mid {
+  width: 220px;
+  right: 1.3rem;
+  top: 7.2rem;
+  transform: rotate(9deg);
+}
+
+.home-products-band {
+  width: min(1240px, 94vw);
+  margin: 0 auto 2rem;
+  background: linear-gradient(160deg, #2f7b49 0%, #1d5f3d 22%, #b3262e 22%, #b3262e 100%);
+  border-radius: 0 0 30px 30px;
+  padding: 2rem 1.3rem 1.9rem;
+  color: #fff;
+  text-align: center;
+}
+
+.home-products-band h2 {
+  margin: 0 0 1rem;
+  color: #fff;
+}
+
+.home-product-rows {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-product-item {
+  padding: 0.4rem;
+}
+
+.home-product-item img {
+  width: min(220px, 100%);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff2d7;
+  margin: 0 auto 0.4rem;
+}
+
+.home-product-item h3 {
+  margin: 0.3rem 0 0.55rem;
+  color: #fff;
+  font-size: 2rem;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
 .home-banner {
   width: min(1240px, 94vw);
   margin: 2.2rem auto;
@@ -422,8 +552,21 @@ section.block {
   .shop-layout,
   .buy-local-grid,
   .buy-local-layout,
-  .gallery-grid {
+  .gallery-grid,
+  .home-product-rows {
     grid-template-columns: 1fr;
+  }
+
+  .home-hero-media {
+    min-height: 520px;
+  }
+
+  .hero-product-discs {
+    top: 54%;
+  }
+
+  .hero-pill {
+    bottom: 2.2rem;
   }
 
   .gallery-item img {
