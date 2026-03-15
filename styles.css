@@ -291,6 +291,12 @@ section.block {
   border-radius: 22px;
   padding: 1.4rem;
   border: 1px solid #eadfca;
+  text-align: center;
+}
+
+.about-hero h1 {
+  margin: 0;
+  color: var(--green-dark);
 }
 
 .about-story-card {
