@@ -102,6 +102,20 @@ main { min-height: calc(100vh - 150px); }
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
+.brand-title {
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  margin-bottom: 0.2rem;
+}
+
+.hero-subtitle {
+  margin: 0 0 0.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
 .hero-product-discs {
   position: absolute;
   left: 50%;
@@ -156,7 +170,7 @@ main { min-height: calc(100vh - 150px); }
 .home-products-band {
   width: min(1240px, 94vw);
   margin: 0 auto 2rem;
-  background: linear-gradient(160deg, #2f7b49 0%, #1d5f3d 22%, #b3262e 22%, #b3262e 100%);
+  background: linear-gradient(160deg, #2f7b49 0%, #1d5f3d 30%, #b88f49 30%, #c99b4f 100%);
   border-radius: 0 0 30px 30px;
   padding: 2rem 1.3rem 1.9rem;
   color: #fff;
