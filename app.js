@@ -10,12 +10,12 @@ if (menuToggle && nav) {
 }
 
 const products = [
-  { id: "classic-hummus", name: "Classic Hummus", price: 5.99 },
-  { id: "garlic-hummus", name: "Garlic Hummus", price: 6.29 },
-  { id: "redpepper-hummus", name: "Roasted Red Pepper Hummus", price: 6.49 },
-  { id: "seasalt-pita", name: "Pita Chips Sea Salt", price: 4.49 },
-  { id: "everything-pita", name: "Pita Chips Everything", price: 4.99 },
-  { id: "lemon-dressing", name: "Lemon Herb Dressing", price: 6.99 }
+  { id: "classic-hummus", name: "Classic Hummus", price: 5.99, image: "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=80" },
+  { id: "garlic-hummus", name: "Garlic Hummus", price: 6.29, image: "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=80" },
+  { id: "redpepper-hummus", name: "Roasted Red Pepper Hummus", price: 6.49, image: "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=80" },
+  { id: "seasalt-pita", name: "Pita Chips Sea Salt", price: 4.49, image: "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=80" },
+  { id: "everything-pita", name: "Pita Chips Everything", price: 4.99, image: "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=80" },
+  { id: "lemon-dressing", name: "Lemon Herb Dressing", price: 6.99, image: "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=80" }
 ];
 
 const cart = [];
@@ -54,6 +54,7 @@ function renderShopProducts() {
     const card = document.createElement("article");
     card.className = "card";
     card.innerHTML = `
+      <img class="shop-product-image" src="${product.image}" alt="${product.name}" loading="lazy" />
       <p class="eyebrow">Bekka Valley</p>
       <h3>${product.name}</h3>
       <p><strong>${formatMoney(product.price)}</strong></p>
